@@ -1,0 +1,31 @@
+{
+  "name": "devtools-extension",
+  "version": "1.1",
+  "description": "Devtools Chrome Extension",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "do-stuff-on-page.js"
+      ]
+    }
+  ],
+  "devtools_page": "devtools.html",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2
+}
